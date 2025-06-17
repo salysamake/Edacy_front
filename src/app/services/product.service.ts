@@ -22,8 +22,8 @@ export class ProductService {
     return this.http.get<Product>(`${this.apiUrl}/products/${id}`);
   }
 
-  addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(`${this.apiUrl}/products`, product, { headers: this.headers });
+  addProduct(product: FormData): Observable<Product> {
+    return this.http.post<Product>(`${this.apiUrl}/products`, product);
   }
 
   addProductWithImage(formData: FormData): Observable<Product> {

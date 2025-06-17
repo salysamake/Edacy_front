@@ -153,6 +153,7 @@ export class AddProductComponent {
 
   onSubmit() {
     if (this.isSubmitting) return;
+     let formData = new FormData();
     
     this.isSubmitting = true;
     this.errorMessage = null;
@@ -169,9 +170,15 @@ export class AddProductComponent {
         this.product.stockQuantity= this.product.stockQuantity || 0,
         //orderItems: this.product.orderItems || []
       
+      // Angular FormData côté front
+       
+      formData.append('image', this.selectedFile);
+      formData.append('product', new Blob([JSON.stringify(this.product)], { type: 'application/json' }));
+
       
+
       
-      this.productService.addProduct(this.product).subscribe({
+      this.productService.addProduct(formData).subscribe({
         next: (newProduct) => {
           console.log('Produit ajouté avec succès:', newProduct);
           this.router.navigate(['/products']);
