@@ -1,0 +1,38 @@
+/* Styles personnalisés */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2920&auto=format&fit=crop') center/cover no-repeat;
+  min-height: 600px;
+}
+
+.payment-method-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-icon {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.footer-link {
+  color: #9CA3AF;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
